@@ -12,9 +12,35 @@ body {
   min-height: 100vh;
 }
 
+.header-title {
+  padding: 1em;
+  background: rgb(211, 211, 211);
+  color: #a0a0a0;
+}
+
 .navbar {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+}
+
+.btn {
+  padding: 1em;
+  flex-grow: 1;
+}
+
+.btn:hover {
+  background: black;
+  color: whitesmoke;
   border: 1px solid black;
+}
+
+button[type="text"] {
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.25em;
+  outline: none;
+  border-radius: none;
+  border: 1px solid black;
+  cursor: pointer;
 }

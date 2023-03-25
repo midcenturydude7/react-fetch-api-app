@@ -1,7 +1,7 @@
 import React from "react";
 
 function Content() {
-  return <div>Content</div>;
+  return <section>Content</section>;
 }
 
 export default Content;
