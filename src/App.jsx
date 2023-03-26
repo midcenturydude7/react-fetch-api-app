@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "./components/Form";
-import ContentList from "./components/ContentList";
+// import ContentList from "./components/ContentList";
+import Table from "./components/Table";
 
 function App() {
   const API_URL = "https://jsonplaceholder.typicode.com/";
@@ -24,9 +25,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="header-title">React | Fetch API App</h1>
       <Form reqType={reqType} setReqType={setReqType} />
-      <ContentList items={items} />
+      {/* <ContentList items={items} /> */}
+      <Table items={items} />
     </div>
   );
 }
