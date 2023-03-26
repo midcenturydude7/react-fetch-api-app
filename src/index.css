@@ -18,24 +18,15 @@ body {
   color: #a0a0a0;
 }
 
-.navbar {
+.form {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
 }
 
-.btn {
+button[type="button"] {
   padding: 1em;
   flex-grow: 1;
-}
-
-.btn:hover {
-  background: black;
-  color: whitesmoke;
-  border: 1px solid black;
-}
-
-button[type="text"] {
   font-size: inherit;
   font-family: inherit;
   padding: 0.25em;
@@ -43,4 +34,24 @@ button[type="text"] {
   border-radius: none;
   border: 1px solid black;
   cursor: pointer;
+}
+
+button[type="button"]:hover {
+  background: black;
+  color: whitesmoke;
+  border: 1px solid black;
+}
+
+.selected,
+.selected:hover {
+  background: rgb(78, 78, 78);
+  color: whitesmoke;
+  cursor: default;
+}
+
+section {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.75em 0;
 }

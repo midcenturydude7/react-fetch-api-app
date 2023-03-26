@@ -1,39 +1,32 @@
 import React from "react";
-import Header from "./components/Header";
-import Content from "./components/Content";
+import Form from "./components/Form";
+import ContentList from "./components/ContentList";
 
 function App() {
-  const API_USERS = "https://jsonplaceholder.typicode.com/users";
+  const API_URL = "https://jsonplaceholder.typicode.com/";
 
-  // const [users, setUsers] = React.useState([]);
+  const [reqType, setReqType] = React.useState("users");
+  const [items, setItems] = React.useState([]);
 
-  function getUsers() {
-    fetch(API_USERS)
-      .then((response) => response.json())
-      .then((data) => {
-        data.map((user) => <l1>{user}</l1>);
-      });
-  }
+  React.useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const response = await fetch(`${API_URL}${reqType}`);
+        const data = await response.json();
+        setItems(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
-  // React.useEffect(() => {
-  //   const fetchUsers = async () => {
-  //     try {
-  //       const response = await fetch(API_USERS);
-  //       if (!response.ok) throw Error("Did not receive expected data");
-  //       const userList = await response.json;
-  //       console.log(JSON.stringify(userList));
-  //     } catch (err) {
-  //       console.log(err.message);
-  //     }
-  //   };
-  //   fetchUsers();
-  // }, []);
+    fetchItems();
+  }, [reqType]);
 
   return (
     <div className="App">
       <h1 className="header-title">React | Fetch API App</h1>
-      <Header getUsers={getUsers} />
-      <Content />
+      <Form reqType={reqType} setReqType={setReqType} />
+      <ContentList items={items} />
     </div>
   );
 }

@@ -1,12 +1,15 @@
 import React from "react";
 
-function Button({ value, getUsers }) {
+function Button({ buttonText, reqType, setReqType }) {
   return (
-    <>
-      <button className="btn" type="text" onClick={() => getUsers()}>
-        {value}
-      </button>
-    </>
+    <button
+      className={
+        buttonText === reqType ? "selected" : null
+      }
+      type="button"
+      onClick={() => setReqType(buttonText)}>
+      {buttonText}
+    </button>
   );
 }
 
